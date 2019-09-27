@@ -1,0 +1,21 @@
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  {% if title %}
+  <title>export - {{title}}</title>
+  {% else %}
+    <title> export </title>
+  {% endif %}
+
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Old+Standard+TT|Roboto" rel="stylesheet">
+
+
+
+</head>
+<body>
+{% block content %} {%endblock%}
+</body>
+</html>

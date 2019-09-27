@@ -1,6 +1,6 @@
 import graphene
 from graphene_django import DjangoObjectType
-from .models import Player
+from .models import Player, Coach
 class PlayerType(DjangoObjectType):
     class Meta:
         model = Player
@@ -18,6 +18,19 @@ class Query(graphene.ObjectType):
 
     def resolve_players(self, info, **kwargs):
         return Player.objects.all()
+
+
+#Coach api
+class CoachType(DjangoObjectType):
+    class Meta:
+        model = Coach
+
+class Query(graphene.ObjectType):
+    coaches = graphene.List(CoachType)
+
+    def resolve_coaches(self, info, **kwargs):
+        return Coach.objects.all()
+
 
 
 # Create Input Object Types
